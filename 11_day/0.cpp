@@ -22,6 +22,13 @@ using namespace std;
 
         return {numss1, numss2};
     }
+    void update(int *p){
+        *p = (*p)  *  2;
+    }
+        void increment(int **p){
+        ++(**p);
+    }
+
 
 int main () {
 
@@ -49,6 +56,10 @@ int main () {
     cout << " size of pointer is " << sizeof(p2) << endl;
 
 
+    int num1 = 110;
+    int *ptr = &num1;
+    increment(&ptr);
+    cout << num1 << endl;
 
     return 0;
 }
