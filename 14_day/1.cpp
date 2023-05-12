@@ -6,6 +6,7 @@ using namespace std;
 
 // OOPS Documentation Complete: https://www.codingninjas.com/codestudio/guided-paths/basics-of-c/content/118817/offering/1381799
 
+// Refer to Love babbar Cheatsheet for OOPS for detailed oops concepts
 
 
 // OOPS Part 2
@@ -176,8 +177,26 @@ Compile Time Polymorphism (ALSO CALLED AS STATIC POLYMORPHISM)
     }
    };
 
+   Run Time Polymorphism (Dynamic Polymorphism)
+   Method or function Overriding
+   Happens during run-time
+   Let say we make a class Human and make a function speak()
+   Now we make another class Dog whose parent is Human
+   Now dog want different implementation of speak() of class Human
+   So this different implementation of same name function by the derived class is known as method overriding.
+   Rules of Function oVerriding:
+   1. Function should have same name for parent and chile
+   2. Arguements should be same for both
+   3. It is only applicable for inheritence.
+*/
 
-
+/*
+Abstraction
+Means Implementation Hiding
+Jo essential cheeze hai dhikha do baaki ki zarurat nahi hai.
+Email mai sirf message dikha do uski internal implementation dhikhane ki zarurat nhi hai.
+We can use Access modifiers to do Abstraction like private for what we need not to show, public which we need to show
+We can increase security and Readability, reusablity of code increases.
 */
 
 class Transgender: private Human{
