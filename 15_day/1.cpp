@@ -3,9 +3,7 @@
 #include<algorithm>
 using namespace std;
 
-// Doubly Linkedlist
-// Lecture 44: Linked List & its types - Singly, Doubly, Circular etc.
-
+// Graph
 
 int main()
 {
