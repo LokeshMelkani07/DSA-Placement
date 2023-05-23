@@ -1,9 +1,79 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
+#include<unordered_map>
+#include<queue>
+#include<list>
+#include<set>
 using namespace std;
 
 // Graph
+// Lecture 87: DFS Traversal in Graph
+
+// TC: O(V)
+// SC: O(V)
+
+void dfs(int node, unordered_map<int, bool> &visited,
+  unordered_map<int, list<int>> &adj, vector<int> &component) {
+
+  // Push the node itself in the answer first
+  component.push_back(node);
+
+  visited[node] = true;
+
+  // har connected node k liye recursive call
+
+  for (auto i : adj[node]) {
+
+    if (!visited[i]) {
+
+      dfs(i, visited, adj, component);
+    }
+  }
+}
+
+vector<vector<int>> depthFirstSearch(int V, int E, vector<vector<int>> &edges)
+
+{
+
+  // prepare adjlist
+
+  unordered_map<int, list<int>> adj;
+
+  for (int i = 0; i < edges.size(); i++) {
+
+    int u = edges[i][0];
+
+    int v = edges[i][1];
+
+    // It is a undirected graph
+
+    adj[u].push_back(v);
+
+    adj[v].push_back(u);
+  }
+
+  vector<vector<int>> ans;
+
+  unordered_map<int, bool> visited;
+
+  // call all node DFS if not visited
+
+  for (int i = 0; i < V; i++) {
+
+    if (!visited[i]) {
+
+      vector<int> component;
+
+      dfs(i, visited, adj, component);
+
+      ans.push_back(component);
+    }
+  }
+
+  return ans;
+}
+
 
 int main()
 {
