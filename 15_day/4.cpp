@@ -3,7 +3,7 @@
 #include<algorithm>
 using namespace std;
 
-// Graph
+// Lecture 89: Cycle Detection in Directed Graphs
 
 int main()
 {
