@@ -68,7 +68,7 @@ void sortStack(stack<int> &stack)
     int num = stack.top();
     stack.pop();
     sortStack(stack);
-    // Now while goung back after hitting the base case, choose the correct position for that number in the stack
+    // Now while going back after hitting the base case, choose the correct position for that number in the stack
     insertBottom(stack, num);
 }
 
