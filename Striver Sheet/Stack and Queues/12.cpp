@@ -42,6 +42,77 @@ stockSpanner.next(75);  // return 4, because the last 4 prices (including today'
 stockSpanner.next(85);  // return 6
 */
 
+vector<int> findStockSpans(vector<int> &prices)
+{
+    // We are given prices of a stock in prices vector
+    // Where index of vector represents days number
+    // We need to tell for a particular ith day, the number of consecutive days till i when price[j] <= prices[i]
+    // We need to include ith day also in that answer
+    // Brute force
+    // For every i, we move to its left and check consecutive smaller numbers and do count++ and store in ans vector for that ith day
+    // TC: O(n2)
+    // Optimised approach
+    // We will use a stack in which we will store the price,span for each index
+    // Check the stack top, if its smaller then add its span in the ans
+    int n = prices.size();
+    vector<int> ans(n);
+    if (n == 1)
+        return {1};
+    stack<pair<int, int>> st; // To store the indexes
+    int span = 1;
+    for (int i = 0; i < n; i++)
+    {
+        span = 1;
+        while (!st.empty() && st.top().first < prices[i])
+        {
+            span += st.top().second;
+            st.pop();
+        }
+
+        st.push({prices[i], span});
+        ans[i] = span;
+    }
+
+    return ans;
+}
+
+vector<int> findStockSpans(vector<int> &prices)
+{
+    // Another approach
+    // We will take ans vector with 1 initial value as minimum ans can be 1
+    // We will store the indexes in the stack
+    // Push 0
+    // Run a loop from i = 1 to =n-1
+    // We will pop out till value of prices at st.top < i
+    // if stack becomes empty means no lesser value found for ans[i] += i;
+    // if stack not empty then ans[i] += st.top - i - 1
+    int n = prices.size();
+    vector<int> ans(n, 1);
+    stack<int> st;
+    st.push(0);
+
+    for (int i = 1; i < n; i++)
+    {
+        while (!st.empty() && prices[st.top()] < prices[i])
+        {
+            st.pop();
+        }
+
+        if (!st.empty())
+        {
+            ans[i] += i - st.top() - 1;
+        }
+        else
+        {
+            ans[i] += i;
+        }
+
+        st.push(i);
+    }
+
+    return ans;
+}
+
 int main()
 {
     return 0;
