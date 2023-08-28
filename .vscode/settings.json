@@ -9,6 +9,13 @@
     "utility": "cpp",
     "xutility": "cpp",
     "array": "cpp",
-    "xstring": "cpp"
+    "xstring": "cpp",
+    "deque": "cpp",
+    "initializer_list": "cpp",
+    "list": "cpp",
+    "queue": "cpp",
+    "stack": "cpp",
+    "type_traits": "cpp",
+    "xhash": "cpp"
   }
 }
