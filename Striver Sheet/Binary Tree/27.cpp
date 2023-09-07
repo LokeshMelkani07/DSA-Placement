@@ -66,7 +66,7 @@ public:
     }
 };
 
-void isParentSum(Node *root)
+void isParentSum1(Node *root)
 {
     // if Question was like to make a BT from the given BT which follows Chilren sum property by increasing the values by atleast 1
     // Chilren sum property means node value = left child value + right child value
@@ -126,9 +126,9 @@ void isParentSum(Node *root)
     }
 
     // children ki value root ke equal krdi toh ab left child pe jao and same krdo
-    isParentSum(root->left);
+    isParentSum1(root->left);
     // left se aagye toh ab right child ke jaake same krdo
-    isParentSum(root->right);
+    isParentSum1(root->right);
 
     // ab vapas parent ke paas aane se phele check krdo ki bacho ke sum ki value equal to parent hai ya nahi?
     // if nhi h toh parent ki value equal to sum of left child + right child krdo
