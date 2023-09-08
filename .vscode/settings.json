@@ -17,6 +17,8 @@
     "stack": "cpp",
     "type_traits": "cpp",
     "xhash": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "string": "cpp",
+    "iosfwd": "cpp"
   }
 }

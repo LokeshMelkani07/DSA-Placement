@@ -77,10 +77,14 @@ public:
         // StringStream convert the string to object so we can read the characters from the string using getline
         if (data.size() == 0)
             return NULL;
-        stringstream s(data);
+
+        // stringstream s(data);
+
         string str;
         // everytime we do getline, it picks up a character using (,) as delimeter and store into str
-        getline(s, str, ','); // pick one character
+
+        // getline(s, str, ','); // pick one character
+
         // everytime we do getline then stream s reads a character from string str considering ',' as a decimeter
         // Everytime we pick a element till we encounter comma (,) we make a node
         // we push it in stack
@@ -99,7 +103,9 @@ public:
             q.pop();
 
             // pick next character from string
-            getline(s, str, ',');
+
+            // getline(s, str, ',');
+
             // if that character is # means its NULL so
             if (str == "#")
             {
@@ -118,7 +124,7 @@ public:
 
             // everytime we do getline then stream s reads a character from string str considering ',' as a decimeter
             // sameway do for node->right
-            getline(s, str, ',');
+            // getline(s, str, ',');
             if (str == "#")
             {
                 node->right = NULL;
